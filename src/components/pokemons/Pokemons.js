@@ -7,7 +7,7 @@ const Pokemons = ({pokemons}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [pokemonsPerPage] = useState(8);
     const [modalOpen, setModalOpen] = useState(false);
-    const [currentPokemon, setCurrentPokemon] = useState('');
+    const [currentPokemon, setCurrentPokemon] = useState(null);
 
     // Get current pokemons
     const indexOfLastPkmn = currentPage * pokemonsPerPage;
@@ -17,7 +17,10 @@ const Pokemons = ({pokemons}) => {
     // Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
-    const toggleModal = () => setModalOpen(!modalOpen)
+    const toggleModal = () => {
+        setModalOpen(!modalOpen)
+        setCurrentPokemon(null)
+    }
 
     const getCurrentPokemon = str => {
         setCurrentPokemon(pokemons.find(p => str === p.id))
