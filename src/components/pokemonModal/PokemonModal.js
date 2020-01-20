@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-
+import './PokemonModal.scss'
 let data1 = []
 
-const PokemonModal = ({name, sprites, abilities}) => {
+const PokemonModal = ({name, id, abilities}) => {
     const [abilitiesData, setAbilitiesData] = useState([])
 
     const fetchAbylity = async url => {
@@ -18,6 +18,7 @@ const PokemonModal = ({name, sprites, abilities}) => {
             data1.push(data)
         })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const getAbilities = () =>{
         abilities.map(a => fetchAbylity(a.ability.url))
     }
@@ -25,15 +26,16 @@ const PokemonModal = ({name, sprites, abilities}) => {
     useEffect(()=> {
         getAbilities()
         setAbilitiesData(data1)
-    }, [])
+    }, [getAbilities])
 
+    // eslint-disable-next-line no-lone-blocks
     {console.log(abilitiesData)}
 
     // let ablitiesName = abilities.map((a, i) => (<p key={i}>{a.ability.name}</p>))
     return(
         <>
             <h2>{name}</h2>
-            <img src={sprites.front_default} alt=""/>
+            <img src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt=""/>
 
             {/* {ablitiesName} */}
         </>
