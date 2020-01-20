@@ -1,0 +1,27 @@
+.card{
+    list-style: none;
+    width: 20%;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+
+    &:hover{
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.116);
+    }
+    p {
+        margin: 10px 0;
+        padding: 0;
+
+        &::first-letter{
+            text-transform: uppercase;
+        }
+    }
+    figure{
+        margin: 0;
+        padding: 0;
+        img{
+            width: 80%;
+        }
+    }
+}
