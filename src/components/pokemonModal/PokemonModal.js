@@ -7,19 +7,26 @@ const PokemonModal = ({name, id, abilities}) => {
 
     const getAbilities = () =>{
         fetchAbilities(abilities, setAbilitiesData)
-        console.log(abilitiesData)
     }
-
+    
     useEffect(()=> {
         getAbilities()
     }, [])
-
+    
+    console.log(abilitiesData)
     return(
         <>
-            <h2>{name}</h2>
-            <img src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt=""/>
+            <h2 className='pkmn_modal_title'>{name}</h2> 
+            <figure className='pkmn_modal_fig'>
+                <img src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt=""/>
+            </figure>
 
-            {abilitiesData && abilitiesData.map((a, i) => (<p key={i}>{a.es.name}</p>))}
+            <div className='pkmn_modal_abilities'>
+                {abilitiesData && abilitiesData.map((a, i) => (
+                    <p key={i}><span>{a.es.name}</span> {a.es.flavor_text}</p>
+                    
+                ))}
+            </div>
         </>
     )
 }

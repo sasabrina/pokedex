@@ -6,10 +6,10 @@ const PokemonCard = ({pokeData, expandPokemon}) => {
 
     return(
         <li className='card' onClick={()=> expandPokemon(id)}>
-            <p>{name}</p>
             <figure>
                 <img src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt=""/>
             </figure>
+            <p>{name}</p>
         </li>
     )
 }

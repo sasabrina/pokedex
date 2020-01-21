@@ -11,6 +11,16 @@
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 
 	&.close {
-		transform: translate(-50%, -500%);
+		transform: translate(-50%, -600%);
 	}
+}
+
+.modal_btn{
+	float: right;
+	min-width: 29px;
+	min-height: 29px;
+	background-color: #ffffff;
+	color: rgba(0, 0, 0, 0.3);
+	border: none;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }

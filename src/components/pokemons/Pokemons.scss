@@ -1,7 +1,14 @@
-.pokemons_container{
-    margin: 0;
-    padding: 0;
+section{
+    height: auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+
+    .pokemons_container{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
 }

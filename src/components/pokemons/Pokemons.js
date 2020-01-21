@@ -5,7 +5,7 @@ import './Pokemons.scss'
 
 const Pokemons = ({pokemons}) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const [pokemonsPerPage] = useState(8);
+    const [pokemonsPerPage] = useState(4);
     const [modalOpen, setModalOpen] = useState(false);
     const [currentPokemon, setCurrentPokemon] = useState(null);
 
@@ -29,7 +29,6 @@ const Pokemons = ({pokemons}) => {
 
     return(
         <section>
-            <h1>Pokedex</h1>
             <ul className='pokemons_container'>
                 {currentPkmns.map((p, i) => <PokemonCard key={i} pokeData={p}  expandPokemon={getCurrentPokemon}/>)}
             </ul>
