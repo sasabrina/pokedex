@@ -1,0 +1,20 @@
+.pokemon_nav{
+    display: flex;
+    li{
+        list-style: none;
+    }
+
+}
+.submenu{
+    position: relative;
+
+    &:hover{
+        .sublist{
+            visibility: visible;
+        }
+    }
+    .sublist{
+        position: absolute;
+        visibility: hidden;
+    }
+}

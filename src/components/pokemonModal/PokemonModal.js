@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {fetchAbilities} from '../../helpers/index'
 import './PokemonModal.scss'
 
-const PokemonModal = ({name, id, abilities}) => {
+const PokemonModal = ({name, id, abilities, lang}) => {
     const [abilitiesData, setAbilitiesData] = useState([])
 
     const getAbilities = () =>{
@@ -13,7 +13,8 @@ const PokemonModal = ({name, id, abilities}) => {
         getAbilities()
     }, [])
     
-    console.log(abilitiesData)
+    let language = abilitiesData.flat().filter(({id}) => id === lang).map(({options})=> options).flat()
+    
     return(
         <>
             <h2 className='pkmn_modal_title'>{name}</h2> 
@@ -22,9 +23,8 @@ const PokemonModal = ({name, id, abilities}) => {
             </figure>
 
             <div className='pkmn_modal_abilities'>
-                {abilitiesData && abilitiesData.map((a, i) => (
-                    <p key={i}><span>{a.es.name}</span> {a.es.flavor_text}</p>
-                    
+                {abilitiesData && language.map((a, i) => (
+                    <p key={i}><span>{a.name}</span> {a.flavor_text}</p>
                 ))}
             </div>
         </>

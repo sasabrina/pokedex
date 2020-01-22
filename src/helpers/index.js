@@ -25,15 +25,20 @@ const fetchAbilities = (arr, setter) => {
             .then(res => res.json())
             .then(res => {
                 let {names, flavor_text_entries} = res;
-                return{
-                    en: {name: names[2].name, flavor_text: flavor_text_entries[21].flavor_text},
-                    es: {name: names[4].name, flavor_text: flavor_text_entries[4].flavor_text}
-                }
+                return[
+                    {id: "en", options: [{name: names[2].name, flavor_text: flavor_text_entries[21].flavor_text}]},
+                    {id: "es", options: [{name: names[4].name, flavor_text: flavor_text_entries[4].flavor_text}]}
+                ]
             })
         })
     )
     .then(data => setter(data))
-    
 }
 
-export {fetchPokemons, fetchAbilities}
+const languages = [
+    {id: "en", options: [{value: "en", item: "English"}, {value: "es", item: "Spanish"}]},
+    {id: "es", options: [{value: "en", item: "Ingles"}, {value: "es", item: "Español"}]}
+]
+
+// const lala = 
+export {fetchPokemons, fetchAbilities, languages}

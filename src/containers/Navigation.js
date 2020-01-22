@@ -1,8 +1,9 @@
 import React from 'react'
+import './containers.scss'
 
-const Navigation = ({children}) => {
+const Navigation = ({clssnm, children}) => {
     return (
-        <nav>
+        <nav className={clssnm}>
             {children}
         </nav>
     )

@@ -3,7 +3,7 @@ import Navigation from '../../containers/Navigation'
 import { Pagination, PokemonCard, Modal, PokemonModal } from '../index'
 import './Pokemons.scss'
 
-const Pokemons = ({pokemons}) => {
+const Pokemons = ({pokemons, lang}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [pokemonsPerPage] = useState(4);
     const [modalOpen, setModalOpen] = useState(false);
@@ -28,17 +28,19 @@ const Pokemons = ({pokemons}) => {
     }
 
     return(
+        <>
         <section>
             <ul className='pokemons_container'>
                 {currentPkmns.map((p, i) => <PokemonCard key={i} pokeData={p}  expandPokemon={getCurrentPokemon}/>)}
             </ul>
-            <Navigation>
+            <Modal isOpen={modalOpen} toggle={toggleModal}>
+                {currentPokemon && lang && <PokemonModal {...currentPokemon} lang={lang}/>}
+            </Modal>
+            <Navigation clssnm={'pag_nav'}>
                 <Pagination pokemonsPerPage={pokemonsPerPage} totalPokemons={pokemons.length} paginate={paginate}/>
             </Navigation>
-            <Modal isOpen={modalOpen} toggle={toggleModal}>
-                {currentPokemon && <PokemonModal {...currentPokemon}/>}
-            </Modal>
         </section>
+        </>
     )
 }
 

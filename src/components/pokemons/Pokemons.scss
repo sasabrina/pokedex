@@ -1,8 +1,8 @@
 section{
-    height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
 
     .pokemons_container{
         margin: 0;
@@ -10,5 +10,10 @@ section{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+    }
+
+    .pag_nav{
+        width: 80%;
+        margin: 15px auto;
     }
 }

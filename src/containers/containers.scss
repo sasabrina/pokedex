@@ -6,12 +6,7 @@ body{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 
-    #root{
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+    
 }
 
 .main-container{
@@ -21,7 +16,7 @@ body{
 
 header{
     min-height: 70px;
-    line-height: 70px;
+    // line-height: 70px;
     text-align: center;
     background-color: #000;
     color: #fff;
@@ -63,4 +58,24 @@ header{
     &:visited{
         color: #000;
     }
+
 }
+
+.pokedex{
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.pokedex_header{
+    display: flex;
+}
+
+// .pokedex_nav{
+//     display: flex;
+
+//     .sublist{
+
+//     }
+// }

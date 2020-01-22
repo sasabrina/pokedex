@@ -1,9 +1,9 @@
 .pagination-list{
     list-style: none;
-    margin: 20px 0;
-    padding: 0 20%;
+    margin: 0;
+    padding: 10px 20%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     border-top: 1px solid #d9d9d9;
 
     .pagination-item{
@@ -11,7 +11,7 @@
         height: 32px;
         line-height: 32px;
         text-align: center;
-        margin: 10px;
+        margin: 0;
         border: 1px solid #d9d9d9;
         border-radius: 5px;
         cursor: pointer;
