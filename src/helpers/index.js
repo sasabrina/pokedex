@@ -40,5 +40,4 @@ const languages = [
     {id: "es", options: [{value: "en", item: "Ingles"}, {value: "es", item: "Español"}]}
 ]
 
-// const lala = 
 export {fetchPokemons, fetchAbilities, languages}
