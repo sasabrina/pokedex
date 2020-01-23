@@ -1,5 +1,4 @@
 import React from 'react'
-import './containers.scss'
 
 const Navigation = ({clssnm, children}) => {
     return (

@@ -3,14 +3,13 @@ import { fetchPokemons } from '../helpers/index'
 import { Pokemons, PokemonNav } from '../components/index'
 import Header from './Header'
 import Navigation from './Navigation'
-import './containers.scss'
 
 const Pokedex = () => {
     const [pokemons, setPokemons] = useState([]);
     const [loading, setLoading] = useState(false);
     const [language, setLanguage] = useState('es')
 
-    // Get pokemons from server
+    // Get pokemons from "server"
     const getPokemons = () => {
         setLoading(true)
         fetchPokemons(setPokemons)
@@ -22,18 +21,16 @@ const Pokedex = () => {
     useEffect(() => {
         getPokemons()
     }, [])
-
-    
-    console.log(pokemons)    
     
     return (
         <>
-        <Header title={'Pokedex'} clssnm={'pokedex_header'}>
-            <Navigation className={'pokedex_nav'}>
-                <PokemonNav language={language} toggle={toggleLanguage}/>
-            </Navigation>
-        </Header>
-        <div className='main-container pokedex'>
+        <div className='pokedex'>
+            <Header title={'Pokedex'} clssnm={'pokedex_header'}>
+                <Navigation className={'pokedex_nav'}>
+                    <PokemonNav language={language} toggle={toggleLanguage}/>
+                </Navigation>
+            </Header>
+            
             <Pokemons pokemons={pokemons} loading={loading} lang={language}/>
         </div>
         </>

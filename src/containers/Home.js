@@ -3,18 +3,17 @@ import {Link} from 'react-router-dom'
 import Header from './Header'
 import pokebanner from '../assets/pokebanner.png'
 import pokeball_icon from '../assets/pokeball_icon.png'
-import './containers.scss'
 
 const Home = () => {
 
     return (
         <>
-            <Header title={'Desafío Frávega'}>
-                <figure>
-                    <img src={pokebanner} alt='pokemon banner'/>
-                </figure>
-            </Header>
-            <div className='main-container'>
+            <div className='home'>
+                <Header title={'Desafío Frávega'} clssnm={'home_header'}>
+                    <figure>
+                        <img src={pokebanner} alt='pokemon banner'/>
+                    </figure>
+                </Header>
 
                 <Link to='/pokedex' className='home_goto'>
                     <figure>

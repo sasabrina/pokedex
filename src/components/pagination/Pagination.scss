@@ -1,41 +1,30 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
 .pagination-list{
-    list-style: none;
     margin: 0;
     padding: 10px 20%;
-    display: flex;
+    @include flex;
     justify-content: space-evenly;
-    border-top: 1px solid #d9d9d9;
+    border-top: $border;
 
     .pagination-item{
+        display: block;
         min-width: 32px;
         height: 32px;
         line-height: 32px;
         text-align: center;
         margin: 0;
-        border: 1px solid #d9d9d9;
+        border: $border;
         border-radius: 5px;
         cursor: pointer;
 
         &:hover{
-            &:hover{
-                box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-            }
-
-            a{
-                color: #440099;
-                &:visited{
-                    color: #440099;
-                }
-            }
+            @include shadow($hover_shadow)
         }
+    }
 
-        a{
-            text-decoration: none;
-            &:visited{
-                color: black;   
-            }
-
-            
-        }
+    .active{
+        @include shadow($hover_shadow)
     }
 }

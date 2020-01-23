@@ -33,13 +33,15 @@ const Pokemons = ({pokemons, lang}) => {
             <ul className='pokemons_container'>
                 {currentPkmns.map((p, i) => <PokemonCard key={i} pokeData={p}  expandPokemon={getCurrentPokemon}/>)}
             </ul>
+
             <Modal isOpen={modalOpen} toggle={toggleModal}>
                 {currentPokemon && lang && <PokemonModal {...currentPokemon} lang={lang}/>}
             </Modal>
-            <Navigation clssnm={'pag_nav'}>
-                <Pagination pokemonsPerPage={pokemonsPerPage} totalPokemons={pokemons.length} paginate={paginate}/>
-            </Navigation>
         </section>
+        
+        <Navigation clssnm={'pag_nav'}>
+            <Pagination pokemonsPerPage={pokemonsPerPage} totalPokemons={pokemons.length} paginate={paginate}/>
+        </Navigation>
         </>
     )
 }

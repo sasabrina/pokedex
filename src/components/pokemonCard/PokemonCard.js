@@ -2,7 +2,7 @@ import React from 'react'
 import './PokemonCard.scss'
 
 const PokemonCard = ({pokeData, expandPokemon}) => {
-    const {name, id} = pokeData
+    const {name, id} = pokeData;
 
     return(
         <li className='card' onClick={()=> expandPokemon(id)}>

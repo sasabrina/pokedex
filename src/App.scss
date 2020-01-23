@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import './styles/variables';
+@import './styles/mixins';
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*************** GLOBAL STYLES*/
+
+#root{
+    height: 100vh;
+    @include flex;
+    align-items: stretch;
+}
+
+ul li {
+    list-style: none;
+}
+
+figure img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*************** HOME */
+
+.home{
+    @include main_container_width;
+    
+    .home_header{
+        @include main_header;
+        padding-top: 20px;
+    }
+
+    .home_goto{
+        max-width: 150px;
+        display: block;
+        @include center(5%);
+        text-decoration: none;
+        text-align: center;
+    
+        figure{
+            max-width: 100px;
+            img{
+                border-radius: 50%;
+                transition: transform .4s ease-in-out;
+            }
+        }
+    
+        p{
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            img{
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    
+        &:visited{
+            color: #000;
+        }
+    }
+}
+
+/*************** POKEDEX */
+
+.pokedex{
+    @include main_container_width;
+    @include flex(column);
+    justify-content: space-between;
+    
+    .pokedex_header{
+        @include main_header;
+        padding: 0 20%;
+        @include flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: $medium_break) {
+            padding: 0 15%;
+        }
+
+        @media (max-width: $xs_break) {
+            flex-direction: column;
+        }
+    }
+}
+

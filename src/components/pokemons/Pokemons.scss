@@ -1,19 +1,22 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
 section{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    width: 80%;
+    @include center;
+    @include flex(column);
     justify-content: space-around;
 
     .pokemons_container{
         margin: 0;
         padding: 0;
-        display: flex;
+        @include flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
 
-    .pag_nav{
-        width: 80%;
-        margin: 15px auto;
-    }
+}
+.pag_nav{
+    width: 80%;
+    @include center(0);
 }

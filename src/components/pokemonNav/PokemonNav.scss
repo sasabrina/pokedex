@@ -1,20 +1,24 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
 .pokemon_nav{
-    display: flex;
+    min-width: 300px;
+    @include flex;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+
     li{
-        list-style: none;
-    }
-
-}
-.submenu{
-    position: relative;
-
-    &:hover{
-        .sublist{
-            visibility: visible;
+        margin-right: 5px;
+        
+        a{
+            color: #fff;
         }
-    }
-    .sublist{
-        position: absolute;
-        visibility: hidden;
+        p{
+            margin: 0;
+            span{
+                margin: 0 3px;
+                cursor: pointer;
+            }
+        }
     }
 }

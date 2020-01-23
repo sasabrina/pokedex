@@ -18,6 +18,7 @@ const PokemonModal = ({name, id, abilities, lang}) => {
     return(
         <>
             <h2 className='pkmn_modal_title'>{name}</h2> 
+            
             <figure className='pkmn_modal_fig'>
                 <img src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} alt=""/>
             </figure>

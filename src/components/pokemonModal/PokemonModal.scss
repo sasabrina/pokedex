@@ -1,29 +1,35 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
 .pkmn_modal_title{
-    margin: 0;
+    @include center;
     &::first-letter{
         text-transform: uppercase;
     }
 }
 
 .pkmn_modal_fig{
-    max-width: 200px;
-    margin: 20px auto;
-
-    img{
-        width: 100%;
-    }
+    max-width: 80%;
+    @include center(20px);
 }
 
 .pkmn_modal_abilities{
     max-width: 80%;
-    margin: 0 auto;
-    border-top: 1px solid #d9d9d9;
+    @include center(0);
+    border-top: $border;
+    font-size: 15px;
+    @media (max-width: $small_break) {
+        max-width: 95%;
+        font-size: 13px;
+    }
 
+    @media (max-width: $xs_break) {
+        max-width: 100%;
+    }
 
     span{
         display: block;
         font-weight: bold;
-        text-align: center;
         text-transform: uppercase;
     }
 }

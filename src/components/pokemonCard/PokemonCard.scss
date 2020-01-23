@@ -1,33 +1,41 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
 .card{
-    list-style: none;
-    width: 20%;
-    min-width: 225px;
+    max-width: 20%;
     min-height: 250px;
     margin: 20px 0;
     padding: 25px 5px 0 5px;
     text-align: center;
-    border: 1px solid #d9d9d9;
+    border: $border;
     border-radius: 4px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    @include shadow(rgba(0, 0, 0, 0.3));
     cursor: pointer;
+    
+    @media (max-width: $medium_break) {
+        max-width: 40%;
+    }
+
+    @media (max-width: $medium_break) {
+        max-width: 45%;
+    }
+
+    @media (max-width: $xs_break) {
+        max-width: 80%;
+    }
 
     &:hover{
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+        @include shadow($hover_shadow);
     }
     p {
         margin: 10px 0;
         padding: 0;
         text-transform: uppercase;
-
-        // &::first-letter{
-        // }
     }
+    
     figure{
-        width: 200px;
-        margin: 0 auto;
+        width: 100%;
+        @include center(0);
         padding: 0;
-        img{
-            width: 100%;
-        }
     }
 }

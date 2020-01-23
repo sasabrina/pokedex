@@ -1,0 +1,28 @@
+@mixin main_container_width{
+    width: 100%;
+}
+
+@mixin main_header{
+    min-height: 70px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+
+    .header_title{
+        margin: 0;
+    }
+}
+
+@mixin flex($direction: null) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin center($y:null) {
+    margin: $y auto;
+}
+
+@mixin shadow($color) {
+    box-shadow: 0 0 4px $color;
+}
+
