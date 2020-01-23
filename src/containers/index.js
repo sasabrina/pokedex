@@ -1,5 +1,4 @@
-import Home from './Home'
+import Header from './Header'
 import Navigation from './Navigation'
-import Pokedex from './Pokedex'
 
-export { Home, Navigation, Pokedex }
+export { Header, Navigation }

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { fetchPokemons } from '../helpers/index'
 import { Pokemons, PokemonNav } from '../components/index'
-import Header from './Header'
-import Navigation from './Navigation'
+import { Header, Navigation } from '../containers/index'
 
 const Pokedex = () => {
     const [pokemons, setPokemons] = useState([]);
